@@ -28,6 +28,8 @@
 
 이미 들어가 있는 게 발견되면 **즉시 제거 + git history 정리**(BFG Repo-Cleaner). 단순 force-push로는 부족하다.
 
+→ 단계별 절차: [`LEAK_CLEANUP.md`](./LEAK_CLEANUP.md). 토큰 폐기 → 백업 → BFG → force-push --mirror → GitHub 캐시·fork·미러 정리 → 회고.
+
 ---
 
 ## 2. 미성년자 추가 보호
@@ -109,7 +111,7 @@
 
 1. **즉시 멈춰라.** 추가 작업 금지.
 2. **단장에게 알려라.** 디스코드 DM 또는 GitHub 이슈(private).
-3. **확산 차단.** 노출된 자료를 모든 채널에서 제거(git history 포함).
+3. **확산 차단.** 노출된 자료를 모든 채널에서 제거(git history 포함). → 절차: [`LEAK_CLEANUP.md`](./LEAK_CLEANUP.md)
 4. **새끼고양이/보호자에게 알려라.** 사실대로. 변명·축소 금지.
 5. **회고를 남겨라.** 단, 회고 자체에 개인정보가 안 들어가게.
 

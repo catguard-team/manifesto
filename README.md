@@ -11,6 +11,7 @@
 | [`MANIFESTO.md`](./MANIFESTO.md) | 자경단이 누구이고 왜 있는지 |
 | [`GANGNYANG.md`](./GANGNYANG.md) | 행동강(綱)냥(領) 10조 본문 + 해설 |
 | [`SAFETY.md`](./SAFETY.md) | 새끼고양이 안전 정책 (강화는 즉시, 완화는 안 됨) |
+| [`LEAK_CLEANUP.md`](./LEAK_CLEANUP.md) | 개인정보·토큰 누출 시 정리 절차 (BFG Repo-Cleaner 가이드) |
 | [`OPERATIONS.md`](./OPERATIONS.md) | 자경단 운영 규칙 |
 | [`CHANGELOG.md`](./CHANGELOG.md) | 강령 개정 이력 |
 

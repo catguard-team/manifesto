@@ -5,6 +5,24 @@
 
 ---
 
+## [v1.2.0] — 2026-04-27
+
+번역·후원 오해 정정 + 누출 정리 플레이북.
+
+### Added
+
+- `LEAK_CLEANUP.md` 신설 — `SAFETY.md` §1 "BFG Repo-Cleaner" 한 줄을 단계별 절차로 풀어 씀. 토큰 폐기 → 백업 → BFG → `force-push --mirror` → GitHub 캐시·fork·미러 정리 → 회고. pre-commit secret scan(gitleaks) + GitHub Secret Scanning 활성화 권고.
+- `MANIFESTO.md` "할 수 있는 것" 섹션 — 영어/다국어 번역 허용(글로벌 브랜딩 목적은 여전히 금지), 후원 받기(OPERATIONS §6 규정 안에서), 외부 단발성 협력.
+
+### Changed
+
+- `MANIFESTO.md`: ❌ "영어 번역으로 글로벌 진출" → ❌ "글로벌 브랜딩으로 동네를 떠나기"로 좁힘. 도구가 아니라 의도를 금지.
+- `MANIFESTO.md`: ❌ "후원 모금을 활동의 중심에 두기" 항목에 OPERATIONS §6 링크 주석 — 받는 것 자체는 가능.
+- `SAFETY.md` §1, §7: 누출 시 절차로 `LEAK_CLEANUP.md` 링크.
+- 에이전트 지침(`CLAUDE.md`, `.github/copilot-instructions.md`): "영어 번역본 금지/후원 안 받음" 잘못된 단언 제거.
+
+---
+
 ## [v1.1.0] — 2026-04-27
 
 자료 공유 절차 정립 + 운영 규칙 다듬기.
