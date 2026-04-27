@@ -34,6 +34,21 @@
 
 ---
 
-**기술, 이제 모두의 골목이다.**
+## 🧭 자경단 문서 지도
+
+모든 자경단 문서 한눈에: [`.github/DOCS-MAP.md`](https://github.com/catguard-team/.github/blob/main/DOCS-MAP.md) — ✅ 완성 / 🟡 부분 / 🚧 미작성 (작성자 모집 이슈 직결).
+
+관련 레포:
+- 📜 이 레포 (`manifesto`) — 자경단 헌법
+- 🐾 [`saenoyangi-handbook`](https://github.com/catguard-team/saenoyangi-handbook) — 신참 학습 가이드
+- 🍯 [`kkulzam-spot`](https://github.com/catguard-team/kkulzam-spot) — 자경단원 꿀팁 모음
+- 🐭 [`jwidori`](https://github.com/catguard-team/jwidori) — 첫 쥐돌이 갤러리
+- 📡 [`nyangbook`](https://github.com/catguard-team/nyangbook) — 라즈베리파이 보급
+
+---
+
+<div align="center">
+  <sub>기술, 이제 모두의 골목이다 · <strong>냐-옥.</strong></sub>
+</div>
 
 **냐-옹.**
