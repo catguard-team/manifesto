@@ -10,7 +10,7 @@
 
 - 새끼고양이 실명·학교·주소·연락처·생년월일·기기 시리얼
 - 보호자 동의 없는 식별 가능 사진/음성
-- API 키, 토큰, 비밀번호, 인증서 (`MIRROR_PAT`, AWS 키, OAuth secret 등)
+- API 키, 토큰, 비밀번호, 인증서 (GitHub PAT, AWS 키, OAuth secret 등)
 - 자경단원 본인의 비공개 정보를 본인이 동의 없이 올린 경우
 
 → **즉시 이 플레이북 시작.** 단순 `git rm` + commit은 부족하다 (히스토리에 남는다).
@@ -35,7 +35,7 @@ echo "🚨 leak-cleanup in progress on <repo>" | (디스코드에 붙여넣기)
 |------|-----------|
 | GitHub PAT | github.com/settings/tokens → 해당 토큰 **Delete** |
 | GitHub fine-grained PAT | github.com/settings/personal-access-tokens → **Revoke** |
-| `MIRROR_PAT` secret | 본인 레포 Settings → Secrets → 삭제 후 재생성 |
+| 레포 secret (Actions) | 본인 레포 Settings → Secrets → 삭제 후 재생성 |
 | AWS Access Key | IAM → 키 비활성화 → 삭제 → 새 키 발급 |
 | OAuth Client Secret | 해당 provider 콘솔에서 rotate |
 | DB 비밀번호 | DB에서 즉시 변경 + 의존 서비스 재배포 |
@@ -180,18 +180,11 @@ gh api repos/<owner>/<repo>/forks --jq '.[] | .full_name'
 
 → 각 fork 소유자에게 디스코드/이슈로 정리 요청. 응답 없으면 GitHub 지원에 함께 신고.
 
-### 6-3. 미러 처리 (자경단 미러 영향)
+### 6-3. 자경단 측 정리
 
-자경단 미러도 같이 정리해야 한다.
+자경단은 자체 레포 외에는 사본을 두지 않으므로 (다른 사람 레포는 [링크 등재](./OPERATIONS.md#11)만), 누출이 외부 자경단원 레포에서 발생한 경우 자경단이 BFG 작업할 사본이 없다 — 원작자가 본인 레포에서 정리하면 끝. 자경단은 인덱스 링크가 살아있는지만 점검.
 
-```bash
-# catguard-team/<repo>가 미러일 경우
-cd /tmp/<repo>.git  # 위에서 정리한 mirror clone
-git remote add catguard https://x-access-token:${MIRROR_PAT}@github.com/catguard-team/<repo>.git
-git push --force --mirror catguard
-```
-
-→ 이후 자동 동기화 워크플로는 청소된 상태에서 재개됨.
+자체 레포(manifesto, .github 등)에서 누출이 발생한 경우는 위 5단계가 그대로 적용된다 (`catguard-team/<repo>`에 직접 force-push --mirror).
 
 ---
 
@@ -211,7 +204,7 @@ git push --force --mirror catguard
 - type: GitHub PAT (revoked at HH:MM)
 - 노출 시간: 약 N분 (push HH:MM ~ revoke HH:MM)
 - 영향: 해당 PAT는 catguard-team/<repo> 1개 레포 push 권한
-- 조치: 토큰 폐기 → BFG 정리 → force-push --mirror → 새 PAT 발급
+- 조치: 토큰 폐기 → BFG 정리 → force-push → 새 PAT 발급
 - 재발 방지: pre-commit hook 도입 검토 (예방 §아래)
 ```
 

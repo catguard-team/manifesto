@@ -5,6 +5,39 @@
 
 ---
 
+## [v1.5.0] — 2026-04-30
+
+자경단 역할 한정: 자체 레포 외에는 모으는 역할(링크 등재)만. 미러 모델 폐기.
+
+### Changed
+
+- `MANIFESTO.md` "무엇을 안 하는가": ❌ "다른 사람 레포 미러링·복제·아카이빙" 추가. 자체 레포 외엔 [링크로만 모은다](OPERATIONS §11) 명시.
+- `OPERATIONS.md` §11: "자료 공유 절차 (5단계 미러)" → "**자료 공유 절차 (링크 등재)**"로 전면 재작성. 4가지 권리 모델(소유/유지/보존/검증) → "사본 없음" 모델(소유·유지·접근권 모두 원작자, 자경단은 검증·등재만). 5단계 → 5단계지만 4단계가 "미러 생성"에서 "링크 등재"로 변경. 삭제 요청 1주일 유예 → 즉시 빼기(사본 없으니 유예 의미 없음).
+- `.github/profile/README.md` "오픈소스 지식공유 강의 (자경단 미러)" → "**자경단원 강의·자료 (링크 등재)**". 미러 컬럼 제거, 원작자 레포로 직접 링크.
+- `.github/ISSUE_TEMPLATE/share-request.md`: "미러 만들기" → "링크 등재", 셋업 단계 제거.
+- `.github/ISSUE_TEMPLATE/remove-request.md`: "미러 삭제 (1주일 유예)" → "**즉시 빼기 (24h)**".
+- `.github/DOCS-MAP.md`: 미러 관련 문서 행 제거, "강의 미러" 섹션 → "자경단원 강의·자료 (링크 등재)".
+- `manifesto/LEAK_CLEANUP.md` §6-3: "자경단 미러 처리" → "자경단 측 정리" — 자경단은 외부 레포 사본 없으니 BFG 대상 아님 명시.
+- `catguard-team.github.io/README.md`: 배지 목록에서 "미러 표시" 제거.
+
+### Removed
+
+- `.github/MIRROR_FAQ.md` — 미러 동작 FAQ.
+- `.github/MIRROR_SETUP.md` — 미러 PAT 셋업 가이드.
+- `.github/workflow-templates/mirror.yml` + `mirror.properties.json` — 6시간 cron 동기화 워크플로 템플릿.
+- `.github/templates/MIRROR_README_HEADER.md` — 미러 레포 상단 헤더 템플릿.
+- `.github/assets/badges/mirror.svg`, `catguard-team.github.io/badges/mirror.svg` — 미러 표시 배지.
+
+### Notes
+
+- **외부 인프라 정리(별도 작업 필요)**:
+  - `catguard-team` org에 있던 미러 레포 3개(`korea-sovereign-ai`, `openclaw-workspace`, `react-flask-ai-stack`) — 단장이 즉시 삭제 결정.
+  - 원작자 레포에 박혀있는 `catguard-mirror.yml` workflow — 원작자 본인이 비활성화/삭제.
+  - `MIRROR_PAT` secret — 폐기.
+- 사상 변경: "보존권 = 자경단" 모델 폐기. 자경단의 사본 책임이 사라지므로 자료 보존은 원작자 영역.
+
+---
+
 ## [v1.4.1] — 2026-04-30
 
 세계로 정책 표현 — 인물 직접 호명에서 행적 비유로 승화.
