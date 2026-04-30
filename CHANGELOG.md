@@ -5,6 +5,28 @@
 
 ---
 
+## [v1.7.6] — 2026-04-30
+
+영문 명칭 정리 — "Cat Vigilante" → "catguard".
+
+### Changed
+
+- 한국어 본문에서 영문 부기를 "Cat Vigilante" → "catguard"로 통일.
+  - GitHub org 이름(`catguard-team`)과 동일한 결의 영문 표기.
+  - 영문 번역체 느낌(Cat Vigilante)에서 한국식 합성어(catguard)로.
+
+대상 파일:
+- `.github/profile/README.md`: "고양이 자경단(Cat Vigilante)" → "고양이 자경단(catguard)"
+- `AGENTS.md` (root) + `.github/AGENTS.md`: 에이전트 자기소개 부기.
+- `.prompts/01-master-setup.md`, `.prompts/03-share-infra.md`: 내부 작업 문서의 프로젝트명 부기.
+
+### Notes
+
+- GitHub org는 그대로 `catguard-team`.
+- 한국어 정체성 표현 "고양이 자경단"이 1차, 영문 "catguard"는 부기 / URL용 / 카테고리 라벨용.
+
+---
+
 ## [v1.7.5] — 2026-04-30
 
 쎄보이는 단어 일괄 정리 — 자경단 결에 맞는 부드러운 표현으로.
